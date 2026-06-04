@@ -1,13 +1,13 @@
 import { useState } from 'react';
 
 const galleryData = [
-  { id: 1, category: 'mural', size: 'large', img: '/images/Screenshot_20240219-152106.png', title: 'Studio Work', dot: 'bg-blue' },
-  { id: 2, category: 'portrait', size: 'square', img: '/images/Screenshot_20240219-1528592.png', title: 'Portrait', dot: 'bg-red' },
-  { id: 3, category: 'portrait', size: 'square', img: '/images/Screenshot_20240219-152813.png', title: 'Commission', dot: 'bg-red' },
-  { id: 4, category: 'clothing', size: 'tall', img: '/images/Screenshot_20240219-151300.png', title: 'Clothing Art', dot: 'bg-amber' },
-  { id: 5, category: 'portrait', size: 'tall', img: '/images/Screenshot_20240219-151649.png', title: 'Charcoal Study', dot: 'bg-red' },
-  { id: 6, category: 'portrait', size: 'tall', img: '/images/Screenshot_20240219-1528593.png', title: 'Portrait', dot: 'bg-red' },
-  { id: 7, category: 'clothing', size: 'tall', img: '/images/Group_48.png', title: 'Custom Piece', dot: 'bg-amber' },
+  { id: 1, category: 'mural', size: 'large', img: '/images/potrait_1.jpg', title: 'Studio Work', dot: 'bg-blue' },
+  { id: 2, category: 'portrait', size: 'square', img: '/images/frame_2.jpg', title: 'Portrait', dot: 'bg-red' },
+  { id: 3, category: 'portrait', size: 'square', img: '/images/denim_3', title: 'Commission', dot: 'bg-red' },
+  { id: 4, category: 'clothing', size: 'tall', img: '/images/potrait_6.jpg', title: 'Clothing Art', dot: 'bg-amber' },
+  { id: 5, category: 'portrait', size: 'tall', img: '/images/denim_1', title: 'Charcoal Study', dot: 'bg-red' },
+  { id: 6, category: 'portrait', size: 'tall', img: '/images/potrait_4.jpg', title: 'Portrait', dot: 'bg-red' },
+  { id: 7, category: 'clothing', size: 'tall', img: '/images/frame_1.jpg', title: 'Custom Piece', dot: 'bg-amber' },
 ];
 
 export default function Gallery() {
