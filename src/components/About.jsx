@@ -2,7 +2,7 @@ export default function About() {
   return (
     <section id="about" className="grid grid-cols-1 md:grid-cols-2 bg-ink-700">
       <div className="relative overflow-hidden min-h-80">
-        <img src="/assets/images/Screenshot_20240219-152106.png" alt="Sledge The Artist" className="w-full h-full object-cover object-top" />
+        <img src="/images/Screenshot_20240219-152106.png" alt="Sledge The Artist" className="w-full h-full object-cover object-top" />
         <div className="absolute inset-0 bg-gradient-to-r from-transparent to-ink-700 hidden md:block"></div>
         <div className="absolute inset-0 bg-gradient-to-t from-ink-700 to-transparent md:hidden"></div>
       </div>

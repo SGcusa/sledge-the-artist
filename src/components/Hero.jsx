@@ -3,8 +3,8 @@ export default function Hero() {
     <section id="hero" className="relative min-h-screen flex items-end overflow-hidden pt-20">
       <div className="hero-bg absolute inset-0">
         <div className="flex flex-row h-full">
-          <img src="/assets/images/Screenshot_20240219-152106.png" alt="Sledge The Artist at work" className="w-full h-full object-cover object-top opacity-50" />
-          <img src="/assets/images/Screenshot_20240219-151300.png" alt="Sledge The Artist at work" className="w-full h-full object-cover object-top opacity-50 max-md:hidden" />
+          <img src="/images/Screenshot_20240219-152106.png" alt="Sledge The Artist at work" className="w-full h-full object-cover object-top opacity-50" />
+          <img src="/images/Screenshot_20240219-151300.png" alt="Sledge The Artist at work" className="w-full h-full object-cover object-top opacity-50 max-md:hidden" />
         </div>
         <div className="absolute inset-0 bg-gradient-to-r from-ink-900/90 via-ink-900/60 to-transparent"></div>
         <div className="absolute inset-0 bg-gradient-to-t from-ink-900 via-transparent to-transparent"></div>
