@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sledge The Artist — Custom Portraits, Murals & Clothing Art</title>
+  <meta name="description" content="Cape Town artist specialising in custom portrait drawings, wall murals and hand-painted clothing art. Commission your piece today." />
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+
+  <!-- jQuery -->
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="css/style.css" />
+
+  <!-- Tailwind config -->
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            red:    { DEFAULT: '#e63946', dark: '#b52d38' },
+            amber:  { DEFAULT: '#f4a261' },
+            blue:   { DEFAULT: '#2d6a9f' },
+            green:  { DEFAULT: '#52b788' },
+            ink:    { 900: '#080808', 800: '#0f0f0f', 700: '#141414', 600: '#1a1a1a', 500: '#222222', 400: '#2a2a2a', 300: '#333333', 200: '#555555', 100: '#888888', 50: '#bbbbbb' },
+            cream:  { DEFAULT: '#f0ede8' },
+          },
+          fontFamily: {
+            display: ['"Bebas Neue"', 'sans-serif'],
+            body:    ['"DM Sans"', 'sans-serif'],
+          },
+        },
+      },
+    }
+  </script>
+</head>
+
+<body class="bg-ink-800 text-cream font-body overflow-x-hidden">
+
+  <!-- ░░ NAV ░░ -->
+  <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-6 py-4 bg-ink-900 border-b border-ink-400 transition-all duration-300">
+    <a href="#" class="font-display text-2xl tracking-widest text-cream">SLEDGE<span class="text-red">.</span></a>
+    <div class="hidden md:flex items-center gap-8">
+      <a href="#services" class="nav-link text-xs tracking-widest uppercase text-ink-100 hover:text-cream transition-colors">Services</a>
+      <a href="#work"     class="nav-link text-xs tracking-widest uppercase text-ink-100 hover:text-cream transition-colors">Work</a>
+      <a href="#about"    class="nav-link text-xs tracking-widest uppercase text-ink-100 hover:text-cream transition-colors">About</a>
+      <a href="#process"  class="nav-link text-xs tracking-widest uppercase text-ink-100 hover:text-cream transition-colors">Process</a>
+      <a href="#contact"  class="nav-link text-xs tracking-widest uppercase text-ink-100 hover:text-cream transition-colors">Contact</a>
+    </div>
+    <a href="#contact" class="btn-red text-xs tracking-widest uppercase px-5 py-3 font-medium hidden md:block">Get a Quote</a>
+    <!-- Mobile hamburger -->
+    <button id="menu-toggle" class="md:hidden text-cream text-2xl focus:outline-none" aria-label="Menu">&#9776;</button>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div id="mobile-menu" class="fixed inset-0 z-40 bg-ink-900 flex flex-col items-center justify-center gap-8 hidden">
+    <button id="menu-close" class="absolute top-5 right-6 text-cream text-3xl">&times;</button>
+    <a href="#services" class="mobile-nav-link font-display text-5xl tracking-widest text-cream">Services</a>
+    <a href="#work"     class="mobile-nav-link font-display text-5xl tracking-widest text-cream">Work</a>
+    <a href="#about"    class="mobile-nav-link font-display text-5xl tracking-widest text-cream">About</a>
+    <a href="#process"  class="mobile-nav-link font-display text-5xl tracking-widest text-cream">Process</a>
+    <a href="#contact"  class="mobile-nav-link font-display text-5xl tracking-widest text-cream">Contact</a>
+  </div>
+
+  <!-- ░░ HERO ░░ -->
+  <section id="hero" class="relative min-h-screen flex items-end overflow-hidden pt-20">
+    <div class="hero-bg absolute inset-0">
+      <img src="images/Screenshot_20240219-152106.png" alt="Sledge The Artist at work" class="w-full h-full object-cover object-top opacity-50" />
+      <div class="absolute inset-0 bg-gradient-to-r from-ink-900/90 via-ink-900/60 to-transparent"></div>
+      <div class="absolute inset-0 bg-gradient-to-t from-ink-900 via-transparent to-transparent"></div>
+      <!-- paint splatter SVG accent -->
+      <svg class="absolute top-0 right-0 w-64 h-64 opacity-10" viewBox="0 0 260 260" aria-hidden="true">
+        <circle cx="180" cy="60" r="55" fill="#e63946"/>
+        <circle cx="220" cy="110" r="30" fill="#f4a261"/>
+        <circle cx="140" cy="30" r="20" fill="#2d6a9f"/>
+        <circle cx="200" cy="170" r="12" fill="#e63946"/>
+        <circle cx="100" cy="80" r="8" fill="#f4a261"/>
+        <ellipse cx="240" cy="40" rx="14" ry="8" fill="#e63946"/>
+      </svg>
+    </div>
+
+    <!-- Left accent bar -->
+    <div class="absolute left-0 top-0 bottom-0 w-1 bg-red"></div>
+
+    <div class="relative z-10 px-8 md:px-16 pb-16 w-full max-w-3xl">
+      <div class="fade-up" style="animation-delay:0.1s">
+        <span class="inline-block bg-red text-white text-xs tracking-widest uppercase px-3 py-1.5 mb-5">Cape Town · South Africa</span>
+      </div>
+      <h1 class="font-display text-8xl md:text-[120px] leading-none text-cream fade-up" style="animation-delay:0.2s">
+        SLEDGE<br><span class="text-red">THE</span><br>ARTIST
+      </h1>
+      <p class="mt-5 text-sm text-ink-50 max-w-sm leading-relaxed font-light fade-up" style="animation-delay:0.35s">
+        Custom portraits. Wall murals. Clothing art.<br>Every piece is a story told with paint, pencil, and purpose.
+      </p>
+      <div class="flex gap-3 mt-8 flex-wrap fade-up" style="animation-delay:0.45s">
+        <a href="#contact" class="btn-red px-6 py-3 text-xs tracking-widest uppercase font-medium">Request Your Piece →</a>
+        <a href="#work"    class="btn-outline px-6 py-3 text-xs tracking-widest uppercase font-medium">View My Work</a>
+      </div>
+      <div class="flex gap-10 mt-10 pt-8 border-t border-white/10 fade-up" style="animation-delay:0.55s">
+        <div><div class="font-display text-4xl text-red">200+</div><div class="text-xs text-ink-100 tracking-widest uppercase mt-1">Pieces Created</div></div>
+        <div><div class="font-display text-4xl text-red">5+</div><div class="text-xs text-ink-100 tracking-widest uppercase mt-1">Years Active</div></div>
+        <div><div class="font-display text-4xl text-red">3</div><div class="text-xs text-ink-100 tracking-widest uppercase mt-1">Services</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Colour band -->
+  <div class="grid grid-cols-3 h-2">
+    <div class="bg-red"></div>
+    <div class="bg-amber"></div>
+    <div class="bg-blue"></div>
+  </div>
+
+  <!-- ░░ SERVICES ░░ -->
+  <section id="services" class="py-20 px-8 md:px-16 bg-ink-700">
+    <div class="section-header mb-10">
+      <p class="eyebrow text-red text-xs tracking-widest uppercase mb-2">What I Do</p>
+      <h2 class="font-display text-5xl text-cream">Services</h2>
+      <div class="w-10 h-0.5 bg-red mt-3"></div>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-px bg-ink-400">
+      <!-- Portrait -->
+      <div class="service-card bg-ink-600 p-8 border-t-2 border-red group hover:bg-ink-500 transition-colors duration-300">
+        <div class="text-red text-3xl mb-5">✏</div>
+        <h3 class="font-display text-2xl text-cream tracking-wide mb-3">Portrait Drawing</h3>
+        <p class="text-sm text-ink-100 leading-relaxed font-light">Detailed hand-drawn portraits in pencil, charcoal or colour. Commissions for individuals, couples and families — each one unique.</p>
+        <a href="#contact" class="inline-block mt-6 text-xs text-red tracking-widest uppercase border border-red px-4 py-2 hover:bg-red hover:text-white transition-colors duration-200">Commission →</a>
+      </div>
+      <!-- Murals -->
+      <div class="service-card bg-ink-600 p-8 border-t-2 border-amber group hover:bg-ink-500 transition-colors duration-300">
+        <div class="text-amber text-3xl mb-5">🖌</div>
+        <h3 class="font-display text-2xl text-cream tracking-wide mb-3">Wall Murals</h3>
+        <p class="text-sm text-ink-100 leading-relaxed font-light">Large-scale wall paintings for homes, businesses and public spaces. From concept sketch all the way to the finished mural.</p>
+        <a href="#contact" class="inline-block mt-6 text-xs text-amber tracking-widest uppercase border border-amber px-4 py-2 hover:bg-amber hover:text-ink-900 transition-colors duration-200">Commission →</a>
+      </div>
+      <!-- Clothing -->
+      <div class="service-card bg-ink-600 p-8 border-t-2 border-blue group hover:bg-ink-500 transition-colors duration-300">
+        <div class="text-blue text-3xl mb-5">👕</div>
+        <h3 class="font-display text-2xl text-cream tracking-wide mb-3">Clothing Art</h3>
+        <p class="text-sm text-ink-100 leading-relaxed font-light">Hand-painted custom art on jackets, jeans and sneakers. Wearable, one-of-a-kind statements that turn clothing into canvas.</p>
+        <a href="#contact" class="inline-block mt-6 text-xs text-blue tracking-widest uppercase border border-blue px-4 py-2 hover:bg-blue hover:text-white transition-colors duration-200">Commission →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ░░ GALLERY ░░ -->
+  <section id="work" class="py-20 px-8 md:px-16 bg-ink-800">
+    <div class="flex flex-wrap items-end justify-between gap-4 mb-8">
+      <div>
+        <p class="eyebrow text-red text-xs tracking-widest uppercase mb-2">Selected Work</p>
+        <h2 class="font-display text-5xl text-cream">The Portfolio</h2>
+        <div class="w-10 h-0.5 bg-red mt-3"></div>
+      </div>
+      <!-- Filter buttons -->
+      <div id="filters" class="flex flex-wrap gap-px border border-ink-400 overflow-hidden">
+        <button class="filter-btn active text-xs tracking-widest uppercase px-4 py-2 transition-colors" data-filter="all">All</button>
+        <button class="filter-btn text-xs tracking-widest uppercase px-4 py-2 transition-colors border-l border-ink-400" data-filter="portrait">Portraits</button>
+        <button class="filter-btn text-xs tracking-widest uppercase px-4 py-2 transition-colors border-l border-ink-400" data-filter="mural">Murals</button>
+        <button class="filter-btn text-xs tracking-widest uppercase px-4 py-2 transition-colors border-l border-ink-400" data-filter="clothing">Clothing</button>
+      </div>
+    </div>
+
+    <div id="gallery-grid" class="grid grid-cols-2 md:grid-cols-3 gap-1">
+      <div class="gallery-item col-span-2 row-span-2 relative overflow-hidden group cursor-pointer" data-category="mural">
+        <img src="images/Screenshot_20240219-152106.png" alt="Artist at work on large canvas" class="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105" style="min-height:320px;" />
+        <div class="absolute inset-0 bg-gradient-to-t from-ink-900/80 via-transparent to-transparent"></div>
+        <div class="absolute bottom-0 left-0 p-4"><span class="dot bg-blue"></span><span class="text-xs text-cream tracking-widest uppercase ml-2">Studio Work</span></div>
+      </div>
+      <div class="gallery-item relative overflow-hidden group cursor-pointer" data-category="portrait" style="aspect-ratio:1">
+        <img src="images/Screenshot_20240219-1528592.png" alt="Charcoal portrait" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+        <div class="absolute inset-0 bg-gradient-to-t from-ink-900/80 to-transparent"></div>
+        <div class="absolute bottom-0 left-0 p-3"><span class="dot bg-red"></span><span class="text-xs text-cream tracking-widest uppercase ml-2">Portrait</span></div>
+      </div>
+      <div class="gallery-item relative overflow-hidden group cursor-pointer" data-category="portrait" style="aspect-ratio:1">
+        <img src="images/Screenshot_20240219-152813.png" alt="Family commission" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+        <div class="absolute inset-0 bg-gradient-to-t from-ink-900/80 to-transparent"></div>
+        <div class="absolute bottom-0 left-0 p-3"><span class="dot bg-red"></span><span class="text-xs text-cream tracking-widest uppercase ml-2">Commission</span></div>
+      </div>
+      <div class="gallery-item relative overflow-hidden group cursor-pointer" data-category="clothing" style="aspect-ratio:4/5">
+        <img src="images/Screenshot_20240219-151300.png" alt="Clothing art" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+        <div class="absolute inset-0 bg-gradient-to-t from-ink-900/80 to-transparent"></div>
+        <div class="absolute bottom-0 left-0 p-3"><span class="dot bg-amber"></span><span class="text-xs text-cream tracking-widest uppercase ml-2">Clothing Art</span></div>
+      </div>
+      <div class="gallery-item relative overflow-hidden group cursor-pointer" data-category="portrait" style="aspect-ratio:4/5">
+        <img src="images/Screenshot_20240219-151649.png" alt="Portrait study" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+        <div class="absolute inset-0 bg-gradient-to-t from-ink-900/80 to-transparent"></div>
+        <div class="absolute bottom-0 left-0 p-3"><span class="dot bg-red"></span><span class="text-xs text-cream tracking-widest uppercase ml-2">Charcoal Study</span></div>
+      </div>
+      <div class="gallery-item relative overflow-hidden group cursor-pointer" data-category="portrait" style="aspect-ratio:4/5">
+        <img src="images/Screenshot_20240219-1528593.png" alt="Portrait artwork" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+        <div class="absolute inset-0 bg-gradient-to-t from-ink-900/80 to-transparent"></div>
+        <div class="absolute bottom-0 left-0 p-3"><span class="dot bg-red"></span><span class="text-xs text-cream tracking-widest uppercase ml-2">Portrait</span></div>
+      </div>
+      <div class="gallery-item relative overflow-hidden group cursor-pointer" data-category="clothing" style="aspect-ratio:4/5">
+        <img src="images/Group_48.png" alt="Custom artwork" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+        <div class="absolute inset-0 bg-gradient-to-t from-ink-900/80 to-transparent"></div>
+        <div class="absolute bottom-0 left-0 p-3"><span class="dot bg-amber"></span><span class="text-xs text-cream tracking-widest uppercase ml-2">Custom Piece</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ░░ ABOUT ░░ -->
+  <section id="about" class="grid grid-cols-1 md:grid-cols-2 bg-ink-700">
+    <div class="relative overflow-hidden min-h-80">
+      <img src="images/Screenshot_20240219-152106.png" alt="Sledge The Artist" class="w-full h-full object-cover object-top" />
+      <div class="absolute inset-0 bg-gradient-to-r from-transparent to-ink-700 hidden md:block"></div>
+      <div class="absolute inset-0 bg-gradient-to-t from-ink-700 to-transparent md:hidden"></div>
+    </div>
+    <div class="flex flex-col justify-center px-10 py-16">
+      <p class="eyebrow text-red text-xs tracking-widest uppercase mb-2">The Artist</p>
+      <h2 class="font-display text-5xl text-cream mb-1">About Sledge</h2>
+      <div class="w-10 h-0.5 bg-red mb-6"></div>
+      <p class="text-sm text-ink-50 leading-relaxed font-light mb-4">Based in Cape Town, I create art that captures people — their stories, their energy, their identity. From detailed portraits to bold murals to hand-painted clothing.</p>
+      <p class="text-sm text-ink-50 leading-relaxed font-light mb-8">Every commission is personal. I work closely with each client to make sure the final piece means something real.</p>
+      <div class="flex flex-wrap gap-2">
+        <span class="tag-red">Portraits</span>
+        <span class="tag-amber">Wall Murals</span>
+        <span class="tag-blue">Clothing Art</span>
+        <span class="tag-ghost">Cape Town</span>
+      </div>
+      <div class="flex gap-4 mt-8">
+        <a href="https://instagram.com/sledgetheartist" target="_blank" class="social-icon" aria-label="Instagram">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+        </a>
+        <a href="https://twitter.com/SledgeTheArtist" target="_blank" class="social-icon" aria-label="Twitter/X">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+        </a>
+        <a href="https://youtube.com/@sledgetheartistZA" target="_blank" class="social-icon" aria-label="YouTube">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M23.5 6.19a3.02 3.02 0 0 0-2.12-2.14C19.54 3.5 12 3.5 12 3.5s-7.54 0-9.38.55A3.02 3.02 0 0 0 .5 6.19C0 8.04 0 12 0 12s0 3.96.5 5.81a3.02 3.02 0 0 0 2.12 2.14C4.46 20.5 12 20.5 12 20.5s7.54 0 9.38-.55a3.02 3.02 0 0 0 2.12-2.14C24 15.96 24 12 24 12s0-3.96-.5-5.81zM9.75 15.02V8.98L15.5 12l-5.75 3.02z"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ░░ PROCESS ░░ -->
+  <section id="process" class="py-20 px-8 md:px-16 bg-ink-800">
+    <p class="eyebrow text-red text-xs tracking-widest uppercase mb-2">How It Works</p>
+    <h2 class="font-display text-5xl text-cream mb-1">The Process</h2>
+    <div class="w-10 h-0.5 bg-red mb-10"></div>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-px bg-ink-400">
+      <div class="step-card bg-ink-700 p-8 border-l-2 border-red">
+        <div class="font-display text-6xl text-ink-500 mb-4">01</div>
+        <h3 class="font-medium text-cream mb-2">Send Your Request</h3>
+        <p class="text-sm text-ink-100 leading-relaxed font-light">WhatsApp or the form below. Tell me what you need — type, size, and any reference photos.</p>
+      </div>
+      <div class="step-card bg-ink-700 p-8 border-l-2 border-amber">
+        <div class="font-display text-6xl text-ink-500 mb-4">02</div>
+        <h3 class="font-medium text-cream mb-2">Quote & Confirmation</h3>
+        <p class="text-sm text-ink-100 leading-relaxed font-light">I send a custom quote based on your brief. Once confirmed and deposit paid, your slot is locked in.</p>
+      </div>
+      <div class="step-card bg-ink-700 p-8 border-l-2 border-blue">
+        <div class="font-display text-6xl text-ink-500 mb-4">03</div>
+        <h3 class="font-medium text-cream mb-2">Creation & Updates</h3>
+        <p class="text-sm text-ink-100 leading-relaxed font-light">I work on your piece and share progress photos. Your feedback shapes the final result.</p>
+      </div>
+      <div class="step-card bg-ink-700 p-8 border-l-2 border-green">
+        <div class="font-display text-6xl text-ink-500 mb-4">04</div>
+        <h3 class="font-medium text-cream mb-2">Delivery</h3>
+        <p class="text-sm text-ink-100 leading-relaxed font-light">Final payment, then collection or delivery. Your original artwork, ready to display or wear.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonial strip -->
+  <div class="bg-red px-8 md:px-16 py-8 flex flex-wrap items-center justify-between gap-4">
+    <p class="font-display text-2xl md:text-3xl text-white tracking-wide flex-1">"SLEDGE CAPTURED MY SON PERFECTLY. IT'S MORE THAN A PAINTING — IT'S A MEMORY."</p>
+    <p class="text-sm text-red-100 tracking-widest opacity-75 whitespace-nowrap">— Happy Client</p>
+  </div>
+
+  <!-- ░░ CONTACT ░░ -->
+  <section id="contact" class="py-20 px-8 md:px-16 bg-ink-700">
+    <div class="max-w-2xl mx-auto text-center mb-12">
+      <p class="eyebrow text-red text-xs tracking-widest uppercase mb-2">Commission a Piece</p>
+      <h2 class="font-display text-6xl md:text-7xl text-cream leading-none">LET'S CREATE<br><span class="text-red">SOMETHING</span></h2>
+      <p class="mt-4 text-sm text-ink-100 font-light">Drop your details and I'll be in touch to discuss your commission.</p>
+    </div>
+
+    <!-- Contact cards -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-px bg-ink-400 mb-12 max-w-2xl mx-auto">
+      <div class="bg-ink-600 p-6 text-center">
+        <div class="text-red text-2xl mb-3">📱</div>
+        <p class="text-xs text-ink-100 tracking-widest uppercase mb-1">WhatsApp</p>
+        <a href="https://wa.me/27653620916" class="text-sm text-cream font-medium hover:text-red transition-colors">065 362 0916</a>
+      </div>
+      <div class="bg-ink-600 p-6 text-center">
+        <div class="text-amber text-2xl mb-3">📸</div>
+        <p class="text-xs text-ink-100 tracking-widest uppercase mb-1">Instagram</p>
+        <a href="https://instagram.com/sledgetheartist" target="_blank" class="text-sm text-cream font-medium hover:text-amber transition-colors">@sledgetheartist</a>
+      </div>
+      <div class="bg-ink-600 p-6 text-center">
+        <div class="text-blue text-2xl mb-3">📍</div>
+        <p class="text-xs text-ink-100 tracking-widest uppercase mb-1">Based In</p>
+        <p class="text-sm text-cream font-medium">Cape Town, ZA</p>
+      </div>
+    </div>
+
+    <!-- Contact form -->
+    <form id="contact-form" class="max-w-2xl mx-auto space-y-3" novalidate>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+        <input id="f-name"    type="text"  placeholder="Your name"         class="form-input" required />
+        <input id="f-phone"   type="tel"   placeholder="WhatsApp / phone"   class="form-input" />
+      </div>
+      <select id="f-service" class="form-input w-full" required>
+        <option value="" disabled selected>Select a service…</option>
+        <option value="portrait">Portrait Drawing</option>
+        <option value="mural">Wall Mural</option>
+        <option value="clothing">Clothing Art</option>
+        <option value="other">Other / Not Sure</option>
+      </select>
+      <textarea id="f-message" rows="4" placeholder="Tell me about your vision — size, subject, occasion…" class="form-input w-full resize-none" required></textarea>
+      <button type="submit" id="submit-btn" class="btn-red w-full py-4 text-sm tracking-widest uppercase font-medium">
+        <span id="btn-text">Send Request →</span>
+        <span id="btn-loading" class="hidden">Sending…</span>
+      </button>
+      <div id="form-success" class="hidden text-center py-4 text-green text-sm tracking-wide">✓ Request sent! I'll be in touch soon.</div>
+      <div id="form-error"   class="hidden text-center py-4 text-red  text-sm tracking-wide">Please fill in your name and tell me about your project.</div>
+    </form>
+  </section>
+
+  <!-- ░░ FOOTER ░░ -->
+  <footer class="bg-ink-900 px-8 md:px-16 py-10 border-t border-ink-400">
+    <div class="flex flex-wrap justify-between items-center gap-6 mb-6">
+      <a href="#" class="font-display text-2xl tracking-widest text-ink-300">SLEDGE<span class="text-red opacity-70">.</span></a>
+      <div class="flex gap-3">
+        <a href="https://instagram.com/sledgetheartist"  target="_blank" class="social-icon" aria-label="Instagram">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+        </a>
+        <a href="https://twitter.com/SledgeTheArtist"   target="_blank" class="social-icon" aria-label="Twitter/X">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+        </a>
+        <a href="https://youtube.com/@sledgetheartistZA" target="_blank" class="social-icon" aria-label="YouTube">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M23.5 6.19a3.02 3.02 0 0 0-2.12-2.14C19.54 3.5 12 3.5 12 3.5s-7.54 0-9.38.55A3.02 3.02 0 0 0 .5 6.19C0 8.04 0 12 0 12s0 3.96.5 5.81a3.02 3.02 0 0 0 2.12 2.14C4.46 20.5 12 20.5 12 20.5s7.54 0 9.38-.55a3.02 3.02 0 0 0 2.12-2.14C24 15.96 24 12 24 12s0-3.96-.5-5.81zM9.75 15.02V8.98L15.5 12l-5.75 3.02z"/></svg>
+        </a>
+        <a href="https://wa.me/27653620916" target="_blank" class="social-icon" aria-label="WhatsApp">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.124.558 4.118 1.532 5.845L.057 23.492a.5.5 0 0 0 .619.635l5.805-1.525A11.95 11.95 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22a9.952 9.952 0 0 1-5.071-1.383l-.361-.214-3.742.982.998-3.648-.235-.374A9.953 9.953 0 0 1 2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
+        </a>
+      </div>
+    </div>
+    <div class="flex flex-wrap justify-between items-center gap-4 pt-6 border-t border-ink-400">
+      <p class="text-xs text-ink-200 tracking-wide">© 2026 Sledge The Artist · Cape Town, South Africa</p>
+      <div class="flex gap-6">
+        <a href="#services" class="text-xs text-ink-200 hover:text-cream tracking-widest uppercase transition-colors">Services</a>
+        <a href="#work"     class="text-xs text-ink-200 hover:text-cream tracking-widest uppercase transition-colors">Work</a>
+        <a href="#contact"  class="text-xs text-ink-200 hover:text-cream tracking-widest uppercase transition-colors">Contact</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Main JS -->
+  <script src="js/main.js"></script>
+</body>
+</html>

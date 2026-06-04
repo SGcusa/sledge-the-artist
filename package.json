@@ -1,0 +1,16 @@
+{
+  "name": "sledge-the-artist",
+  "version": "1.0.0",
+  "description": "Personal portfolio and commission website for **Sledge The Artist** (Cape Town, ZA).",
+  "main": "index.js",
+  "scripts": {
+    "start": "serve . -l 3000"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "serve": "^14.2.6"
+  }
+}
