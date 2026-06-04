@@ -44,7 +44,7 @@ export default function Gallery() {
           <div 
             key={item.id}
             className={`gallery-item relative overflow-hidden group cursor-pointer ${
-              item.size === 'large' ? 'col-span-2 row-span-2' : ''
+              item.size === 'large' ? 'col-span-1 row-span-1' : ''
             }`} 
             style={{ 
               aspectRatio: item.size === 'square' ? '1' : item.size === 'tall' ? '4/5' : 'auto',

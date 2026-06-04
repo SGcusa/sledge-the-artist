@@ -1,6 +1,30 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+
+@theme {
+  /* Your Custom Colors */
+  --color-red: #D4A843;
+  --color-red-dark: #b52d38;
+  --color-amber: #e63946;
+  --color-blue: #2d6a9f;
+  --color-green: #52b788;
+  
+  --color-ink-50: #bbbbbb;
+  --color-ink-100: #888888;
+  --color-ink-200: #555555;
+  --color-ink-300: #333333;
+  --color-ink-400: #2a2a2a;
+  --color-ink-500: #222222;
+  --color-ink-600: #1a1a1a;
+  --color-ink-700: #141414;
+  --color-ink-800: #0f0f0f;
+  --color-ink-900: #080808;
+  
+  --color-cream: #f0ede8;
+  
+  /* Your Custom Fonts */
+  --font-display: "Bebas Neue", sans-serif;
+  --font-body: "DM Sans", sans-serif;
+}
 
 /* ── Base Layout & Scroll ── */
 html { 
@@ -58,7 +82,7 @@ section[id], footer[id] {
   }
   
   /* Cards & UI Elements */
-  .service-card { @apply bg-ink-600 p-8 group hover:bg-ink-500 transition-colors duration-300; }
+  .service-card { @apply bg-ink-600 p-8 hover:bg-ink-500 transition-colors duration-300; }
   .step-card { @apply bg-ink-700 p-8; }
   .dot { @apply inline-block w-[7px] h-[7px] rounded-full align-middle; }
   
@@ -67,4 +91,10 @@ section[id], footer[id] {
   .tag-amber { @apply inline-block text-[0.625rem] tracking-[.1rem] uppercase px-3 py-1 border border-amber text-amber; }
   .tag-blue { @apply inline-block text-[0.625rem] tracking-[.1rem] uppercase px-3 py-1 border border-blue text-blue; }
   .tag-ghost { @apply inline-block text-[0.625rem] tracking-[.1rem] uppercase px-3 py-1 border border-ink-300 text-ink-100; }
+
+  /* Service Card Elements */
+  .service-icon { @apply text-3xl mb-5; }
+  .service-title { @apply font-display text-2xl text-cream tracking-wide mb-3; }
+  .service-desc { @apply text-sm text-ink-100 leading-relaxed font-light; }
+  .btn-service { @apply inline-block mt-6 text-xs tracking-widest uppercase px-4 py-2 transition-colors duration-200 border bg-transparent; }
 }
