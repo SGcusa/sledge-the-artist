@@ -3,9 +3,9 @@ export default function Process() {
     <section id="process" className="py-20 px-8 md:px-16 bg-ink-800">
       <p className="section-eyebrow">How It Works</p>
       <h2 className="section-heading">The Process</h2>
-      <div className="section-divider mb-10"></div>
+      {/* <div className="section-divider mb-10"></div> */}
       
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-ink-400">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-ink-400 mt-2.5 md:mt-5">
         <div className="group step-card border-l-2 border-red transition-colors duration-[5s] ease-in-out">
           <div className="font-display text-6xl text-ink-500 mb-4 transition-colors duration-[2s] ease-in-out group-hover:text-red">01</div>
           <h3 className="font-medium text-cream mb-2 transition-all duration-[1.5s] ease-in-out group-hover:text-[24px]">Send Your Request</h3>
