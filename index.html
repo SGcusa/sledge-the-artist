@@ -26,8 +26,8 @@
       theme: {
         extend: {
           colors: {
-            red:    { DEFAULT: '#e63946', dark: '#b52d38' },
-            amber:  { DEFAULT: '#f4a261' },
+            red:    { DEFAULT: '#D4A843', dark: '#D4A843' },
+            amber:  { DEFAULT: '#e63946' },
             blue:   { DEFAULT: '#2d6a9f' },
             green:  { DEFAULT: '#52b788' },
             ink:    { 900: '#080808', 800: '#0f0f0f', 700: '#141414', 600: '#1a1a1a', 500: '#222222', 400: '#2a2a2a', 300: '#333333', 200: '#555555', 100: '#888888', 50: '#bbbbbb' },
@@ -73,17 +73,20 @@
   <!-- ░░ HERO ░░ -->
   <section id="hero" class="relative min-h-screen flex items-end overflow-hidden pt-20">
     <div class="hero-bg absolute inset-0">
-      <img src="images/Screenshot_20240219-152106.png" alt="Sledge The Artist at work" class="w-full h-full object-cover object-top opacity-50" />
+      <div class="flex flex-row h-full">
+        <img src="images/Screenshot_20240219-152106.png" alt="Sledge The Artist at work" class="w-full h-full object-cover object-top opacity-50 max-md:hidden" />
+        <img src="images/Screenshot_20240219-151300.png" alt="Sledge The Artist at work" class="w-full h-full object-cover object-top opacity-50" />
+      </div>
       <div class="absolute inset-0 bg-gradient-to-r from-ink-900/90 via-ink-900/60 to-transparent"></div>
       <div class="absolute inset-0 bg-gradient-to-t from-ink-900 via-transparent to-transparent"></div>
       <!-- paint splatter SVG accent -->
       <svg class="absolute top-0 right-0 w-64 h-64 opacity-10" viewBox="0 0 260 260" aria-hidden="true">
-        <circle cx="180" cy="60" r="55" fill="#e63946"/>
-        <circle cx="220" cy="110" r="30" fill="#f4a261"/>
+        <circle cx="180" cy="60" r="55" fill="#D4A843"/>
+        <circle cx="220" cy="110" r="30" fill="#e63946"/>
         <circle cx="140" cy="30" r="20" fill="#2d6a9f"/>
-        <circle cx="200" cy="170" r="12" fill="#e63946"/>
-        <circle cx="100" cy="80" r="8" fill="#f4a261"/>
-        <ellipse cx="240" cy="40" rx="14" ry="8" fill="#e63946"/>
+        <circle cx="200" cy="170" r="12" fill="#D4A843"/>
+        <circle cx="100" cy="80" r="8" fill="#e63946"/>
+        <ellipse cx="240" cy="40" rx="14" ry="8" fill="#D4A843"/>
       </svg>
     </div>
 
@@ -246,24 +249,24 @@
     <h2 class="font-display text-5xl text-cream mb-1">The Process</h2>
     <div class="w-10 h-0.5 bg-red mb-10"></div>
     <div class="grid grid-cols-1 md:grid-cols-2 gap-px bg-ink-400">
-      <div class="step-card bg-ink-700 p-8 border-l-2 border-red">
-        <div class="font-display text-6xl text-ink-500 mb-4">01</div>
-        <h3 class="font-medium text-cream mb-2">Send Your Request</h3>
+      <div class="group step-card bg-ink-700 p-8 border-l-2 border-red transition-colors duration-[5s] ease-in-out easy-in-out">
+        <div class="font-display text-6xl text-ink-500 mb-4 transition-colors duration-[2s] ease-in-out easy-in-out group-hover:text-red">01</div>
+        <h3 class="font-medium text-cream mb-2 duration-[1.5s] ease-in-out easy-in-out group-hover:text-[24px]">Send Your Request</h3>
         <p class="text-sm text-ink-100 leading-relaxed font-light">WhatsApp or the form below. Tell me what you need — type, size, and any reference photos.</p>
       </div>
-      <div class="step-card bg-ink-700 p-8 border-l-2 border-amber">
-        <div class="font-display text-6xl text-ink-500 mb-4">02</div>
-        <h3 class="font-medium text-cream mb-2">Quote & Confirmation</h3>
+      <div class="group step-card bg-ink-700 p-8 border-l-2 border-amber">
+        <div class="font-display text-6xl text-ink-500 mb-4 transition-colors duration-[2s] ease-in-out easy-in-out group-hover:text-amber">02</div>
+        <h3 class="font-medium text-cream mb-2 duration-[1.5s] ease-in-out easy-in-out group-hover:text-[24px]">Quote & Confirmation</h3>
         <p class="text-sm text-ink-100 leading-relaxed font-light">I send a custom quote based on your brief. Once confirmed and deposit paid, your slot is locked in.</p>
       </div>
-      <div class="step-card bg-ink-700 p-8 border-l-2 border-blue">
-        <div class="font-display text-6xl text-ink-500 mb-4">03</div>
-        <h3 class="font-medium text-cream mb-2">Creation & Updates</h3>
+      <div class="group step-card bg-ink-700 p-8 border-l-2 border-blue">
+        <div class="font-display text-6xl text-ink-500 mb-4 transition-colors duration-[2s] ease-in-out easy-in-out group-hover:text-blue">03</div>
+        <h3 class="font-medium text-cream mb-2 duration-[1.5s] ease-in-out easy-in-out group-hover:text-[24px]">Creation & Updates</h3>
         <p class="text-sm text-ink-100 leading-relaxed font-light">I work on your piece and share progress photos. Your feedback shapes the final result.</p>
       </div>
-      <div class="step-card bg-ink-700 p-8 border-l-2 border-green">
-        <div class="font-display text-6xl text-ink-500 mb-4">04</div>
-        <h3 class="font-medium text-cream mb-2">Delivery</h3>
+      <div class="group step-card bg-ink-700 p-8 border-l-2 border-green">
+        <div class="font-display text-6xl text-ink-500 mb-4 transition-colors duration-[2s] ease-in-out easy-in-out group-hover:text-green">04</div>
+        <h3 class="font-medium text-cream mb-2 duration-[1.5s] ease-in-out easy-in-out group-hover:text-[24px]">Delivery</h3>
         <p class="text-sm text-ink-100 leading-relaxed font-light">Final payment, then collection or delivery. Your original artwork, ready to display or wear.</p>
       </div>
     </div>
