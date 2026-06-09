@@ -41,7 +41,13 @@ export default function Navbar() {
           isScrolled ? 'py-2 shadow-[0_4px_24px_rgba(0,0,0,0.5)]' : 'py-4'
         }`}
       >
-        <a href="#" className="font-display text-2xl tracking-widest text-cream">SLEDGE<span className="text-red">.</span></a>
+        <a href="#" className="inline-block h-14 transition-opacity hover:opacity-90">
+          <img 
+            src="images/logo.png" 
+            alt="Sledge The Artist" 
+            className="h-full w-auto object-contain"
+          />
+        </a>
         
         <div className="hidden md:flex items-center gap-8">
           {['services', 'work', 'about', 'process', 'contact'].map((item) => (
@@ -60,10 +66,35 @@ export default function Navbar() {
         <a href="#contact" className="btn-red text-xs tracking-widest uppercase px-5 py-3 font-medium hidden md:block">Get a Quote</a>
         
         <button 
-          onClick={() => setIsMenuOpen(true)}
-          className="md:hidden text-cream text-2xl focus:outline-none" 
+          onClick={() => setIsMenuOpen(!isMenuOpen)}
+          className="md:hidden focus:outline-none z-50 relative transition-transform active:scale-95" 
+          aria-label={isMenuOpen ? "Close Menu" : "Open Menu"}
         >
-          &#9776;
+          {isMenuOpen ? (
+            /* 1. ARTISTIC SLASHED 'X' (Red: #b52d38) */
+            <svg 
+              xmlns="http://www.w3.org/2000/svg" 
+              viewBox="0 0 32 32" 
+              className="w-8 h-8"
+              fill="#b52d38"
+            >
+              <path d="M7,5 Q16,14 27,25 Q16,16 5,7 Z" />
+              <path d="M25,5 Q14,14 5,25 Q16,16 27,5 Z" />
+            </svg>
+          ) : (
+            /* 2. GOLD PAINTBRUSH BURGER MENU (#D4A843) */
+            <svg 
+              xmlns="http://www.w3.org/2000/svg" 
+              viewBox="0 0 32 32" 
+              className="w-8 h-8"
+              fill="#D4A843"
+            >
+              <path d="M4,7 Q16,5 28,8 Q16,10 4,7 Z" />
+              <path d="M2,15 Q16,17 30,14 Q15,13 2,15 Z" />
+              <path d="M5,23 Q18,21 26,24 Q15,25 5,23 Z" />
+              <circle cx="29" cy="22" r="1.2" />
+            </svg>
+          )}
         </button>
       </nav>
 

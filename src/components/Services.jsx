@@ -6,11 +6,11 @@ export default function Services() {
   const card3Ref = useFadeIn();
 
   return (
-    <section id="services" className="py-20 px-8 md:px-16 bg-ink-700">
+    <section id="services" className="py-10 md:py-20 px-4 md:px-16 bg-ink-700">
       <div className="mb-10">
         <p className="section-eyebrow">What I Do</p>
         <h2 className="section-heading">Services</h2>
-        {/* <div className="section-divider"></div> */}
+        <div className="section-divider"></div>
       </div>
       
       <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-ink-400">

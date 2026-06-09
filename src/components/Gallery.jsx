@@ -19,12 +19,12 @@ export default function Gallery() {
   );
 
   return (
-    <section id="work" className="py-20 px-8 md:px-16 bg-ink-800">
+    <section id="work" className="py-10 md:py-20 px-4 md:px-16 bg-ink-800">
       <div className="flex flex-wrap items-end justify-between gap-4 mb-8">
         <div>
           <p className="section-eyebrow">Selected Work</p>
           <h2 className="section-heading">The Portfolio</h2>
-          {/* <div className="section-divider"></div> */}
+          <div className="section-divider"></div>
         </div>
         
         <div id="filters" className="flex flex-wrap gap-px border border-ink-400 overflow-hidden">

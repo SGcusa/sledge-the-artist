@@ -36,7 +36,7 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="py-20 px-8 md:px-16 bg-ink-700">
+    <section id="contact" className="py-10 md:py-20 px-4 md:px-16 bg-ink-700">
       <div className="max-w-2xl mx-auto text-center mb-12">
         <p className="section-eyebrow">Commission a Piece</p>
         <h2 className="font-display text-6xl md:text-7xl text-cream leading-none">LET'S CREATE<br /><span className="text-red">SOMETHING</span></h2>

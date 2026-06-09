@@ -1,6 +1,6 @@
 export default function Footer() {
   return (
-    <footer className="bg-ink-900 px-8 md:px-16 py-10 border-t border-ink-400">
+    <footer className="bg-ink-900 px-4 md:px-16 py-10 border-t border-ink-400">
       <div className="flex flex-wrap justify-between items-center gap-6 mb-6">
         <a href="#" className="font-display text-2xl tracking-widest text-ink-300">SLEDGE<span className="text-red opacity-70">.</span></a>
         <div className="flex gap-3">

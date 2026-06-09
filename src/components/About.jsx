@@ -1,15 +1,15 @@
 export default function About() {
   return (
     <section id="about" className="grid grid-cols-1 md:grid-cols-2 bg-ink-700">
-      <div className="relative overflow-hidden min-h-80">
-        <img src="/images/potrait_8.jpg" alt="Sledge The Artist" className="w-full h-full object-cover object-top" />
+      <div className="relative overflow-hidden min-h-80 max-md:max-h-60">
+        <img src="/images/potrait_8.jpg" alt="Sledge The Artist" className="w-full h-full object-cover object-center md:object-top" />
         <div className="absolute inset-0 bg-gradient-to-r from-transparent to-ink-700 hidden md:block"></div>
         <div className="absolute inset-0 bg-gradient-to-t from-ink-700 to-transparent md:hidden"></div>
       </div>
-      <div className="flex flex-col justify-center px-10 py-16">
+      <div className="flex flex-col justify-center px-6 md:px-10 py-8 md:py-16">
         <p className="section-eyebrow">The Artist</p>
         <h2 className="section-heading">About Sledge</h2>
-        {/* <div className="section-divider mb-6"></div> */}
+        <div className="section-divider mb-6"></div>
         
         <p className="text-sm text-ink-50 leading-relaxed font-light mb-4 mt-2.5 md:mt-5">
           Based in Cape Town, I create art that captures people — their stories, their energy, their identity. From detailed portraits to bold murals to hand-painted clothing.
