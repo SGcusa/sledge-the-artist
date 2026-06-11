@@ -40,7 +40,7 @@ export default function Contact() {
       <div className="max-w-2xl mx-auto text-center mb-12">
         <p className="section-eyebrow">Commission a Piece</p>
         <h2 className="font-display text-6xl md:text-7xl text-cream leading-none">LET'S CREATE<br /><span className="text-red">SOMETHING</span></h2>
-        <p className="mt-4 text-sm text-ink-100 font-light">Drop your details and I'll be in touch to discuss your commission.</p>
+        <p className="mt-4 text-sm text-ink-100 font-light">Drop your details and <br className="md:hidden"></br>I'll be in touch to discuss your commission.</p>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-ink-400 mb-12 max-w-2xl mx-auto">

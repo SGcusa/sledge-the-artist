@@ -27,11 +27,11 @@ export default function Hero() {
           SLEDGE<br /><span className="text-red">THE</span><br />ARTIST
         </h1>
         <p className="mt-5 text-sm text-ink-50 max-w-sm leading-relaxed font-light fade-up" style={{ animationDelay: '0.35s' }}>
-          Custom portraits. Wall murals. Clothing art.<br />Every piece is a story told with paint, pencil, and purpose.
+          Custom portraits. Wall murals. Clothing art.<br />Every piece is a story told with paint, pencil, <br className="md:hidden"></br> and purpose.
         </p>
         <div className="flex gap-3 mt-8 flex-wrap fade-up" style={{ animationDelay: '0.45s' }}>
-          <a href="#contact" className="btn-red px-6 py-3 text-xs tracking-widest uppercase font-medium">Request Your Piece →</a>
-          <a href="#work"    className="btn-outline px-6 py-3 text-xs tracking-widest uppercase font-medium">View My Work</a>
+          <a href="#contact" className="btn-red p-2.5 md:px-6 md:py-3 text-xs tracking-widest uppercase font-medium">Request Your Piece →</a>
+          <a href="#work"    className="btn-outline p-2.5 md:px-6 md:py-3 text-xs tracking-widest uppercase font-medium">View My Work</a>
         </div>
       </div>
     </section>

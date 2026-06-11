@@ -50,7 +50,7 @@ export default function Navbar() {
         </a>
         
         <div className="hidden md:flex items-center gap-8">
-          {['services', 'work', 'about', 'process', 'contact'].map((item) => (
+          {['work', 'about', 'process', 'contact'].map((item) => (
             <a 
               key={item}
               href={`#${item}`} 
@@ -67,7 +67,7 @@ export default function Navbar() {
         
         <button 
           onClick={() => setIsMenuOpen(!isMenuOpen)}
-          className="md:hidden focus:outline-none z-50 relative transition-transform active:scale-95" 
+          className="md:hidden focus:outline-none z-50 relative transition-transform active:scale-95 cursor-pointer" 
           aria-label={isMenuOpen ? "Close Menu" : "Open Menu"}
         >
           {isMenuOpen ? (

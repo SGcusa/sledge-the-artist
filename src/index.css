@@ -6,7 +6,8 @@
   --color-red-dark: #b52d38;
   --color-amber: #e63946;
   --color-blue: #2d6a9f;
-  --color-green: #52b788;
+  --color-green: #52b788; 
+  --color-canvas-green: #52b788; 
   
   --color-ink-50: #bbbbbb;
   --color-ink-100: #888888;
@@ -69,6 +70,7 @@ section[id], footer[id] {
     width: 88px;
     height: 20px; 
     margin-top: 0px;
+    margin-left: -10px;
     background-repeat: no-repeat;
     background-size: contain;
     background-position: left top;

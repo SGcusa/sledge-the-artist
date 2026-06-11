@@ -1,20 +1,20 @@
 export default function About() {
   return (
     <section id="about" className="grid grid-cols-1 md:grid-cols-2 bg-ink-700">
-      <div className="relative overflow-hidden min-h-80 max-md:max-h-60">
+      <div className="relative overflow-hidden min-h-80 max-md:order-2">
         <img src="/images/potrait_8.jpg" alt="Sledge The Artist" className="w-full h-full object-cover object-center md:object-top" />
         <div className="absolute inset-0 bg-gradient-to-r from-transparent to-ink-700 hidden md:block"></div>
-        <div className="absolute inset-0 bg-gradient-to-t from-ink-700 to-transparent md:hidden"></div>
+        <div className="absolute inset-0 md:hidden before:absolute before:inset-0 before:bg-gradient-to-b before:from-ink-800 before:to-transparent after:absolute after:inset-0 after:bg-gradient-to-t after:from-ink-800 after:to-transparent"></div>
       </div>
-      <div className="flex flex-col justify-center px-6 md:px-10 py-8 md:py-16">
+      <div className="flex flex-col justify-center px-6 md:px-10 py-8 md:py-16 max-md:order-1">
         <p className="section-eyebrow">The Artist</p>
-        <h2 className="section-heading">About Sledge</h2>
+        <h2 className="section-heading">About <br className="md:hidden"></br> Sledge The Artist</h2>
         <div className="section-divider mb-6"></div>
         
         <p className="text-sm text-ink-50 leading-relaxed font-light mb-4 mt-2.5 md:mt-5">
-          Based in Cape Town, I create art that captures people — their stories, their energy, their identity. From detailed portraits to bold murals to hand-painted clothing.
+          I create art that captures people — their stories, their energy, their identity. From detailed portraits to bold murals to hand-painted clothing.
         </p>
-        <p className="text-sm text-ink-50 leading-relaxed font-light mb-8">
+        <p className="text-sm text-ink-50 leading-relaxed font-light md:mb-8">
           Every commission is personal. I work closely with each client to make sure the final piece means something real.
         </p>
         
