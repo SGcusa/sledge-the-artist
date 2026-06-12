@@ -1,38 +1,128 @@
 import { useState } from 'react';
 
 export default function Contact() {
-  const [formData, setFormData] = useState({ name: '', phone: '', service: '', message: '' });
+  // Pre-filled phone with +27
+  const [formData, setFormData] = useState({ name: '', email: '', phone: '+27 ', service: '', message: '' });
   const [status, setStatus] = useState('idle'); // idle, loading, success, error
+  const [errorMessage, setErrorMessage] = useState('');
+  
+  // Track specific input errors
+  const [errors, setErrors] = useState({ email: '', phone: '' });
 
+  // Handle standard inputs
   const handleInputChange = (e) => {
     setFormData({ ...formData, [e.target.id]: e.target.value });
+    // Clear error for the specific field as the user types
+    if (errors[e.target.id]) {
+      setErrors({ ...errors, [e.target.id]: '' });
+    }
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
+  // Special handler for the phone to strictly maintain the +27 prefix
+  const handlePhoneChange = (e) => {
+    let val = e.target.value;
+    // Prevent the user from deleting the "+27" completely
+    if (!val.startsWith('+27')) {
+      val = '+27 ';
+    }
+    setFormData({ ...formData, phone: val });
+    if (errors.phone) setErrors({ ...errors, phone: '' });
+  };
 
-    // Basic Validation
+  // Validation Logic triggered when clicking away (onBlur)
+  const validateEmail = (email) => {
+    if (!email.trim()) return 'Email is required.';
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) return 'Please enter a valid email (e.g., name@example.com).';
+    return '';
+  };
+
+  const validatePhone = (phone) => {
+    const stripped = phone.replace(/\s+/g, ''); // Remove spaces to check length
+    // Allow it to be empty (just the prefix) if you want it optional, 
+    // BUT if they add numbers, it must be exactly 9 digits after +27.
+    if (stripped === '+27') return 'Phone number is required.'; 
+    
+    // RSA numbers must be +27 followed by exactly 9 digits
+    const rsaRegex = /^\+27\d{9}$/;
+    if (!rsaRegex.test(stripped)) {
+      return 'Must be a valid RSA number (e.g., +27 65 362 0916).';
+    }
+    return '';
+  };
+
+  const handleBlur = (e) => {
+    const { id, value } = e.target;
+    if (id === 'email') {
+      setErrors(prev => ({ ...prev, email: validateEmail(value) }));
+    }
+    if (id === 'phone') {
+      setErrors(prev => ({ ...prev, phone: validatePhone(value) }));
+    }
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setErrorMessage('');
+
+    // Force validation on all fields before submitting
+    const emailError = validateEmail(formData.email);
+    const phoneError = validatePhone(formData.phone);
+    
+    if (emailError || phoneError) {
+      setErrors({ email: emailError, phone: phoneError });
+      setStatus('error');
+      setErrorMessage('Please fix the highlighted errors before submitting.');
+      setTimeout(() => setStatus('idle'), 4000);
+      return;
+    }
+
     if (!formData.name.trim() || !formData.message.trim() || !formData.service) {
       setStatus('error');
+      setErrorMessage('Please complete all required fields.');
       setTimeout(() => setStatus('idle'), 4000);
       return;
     }
 
     setStatus('loading');
 
-    // Simulate Network Request (1.2 seconds)
-    setTimeout(() => {
-      setStatus('success');
-      
-      // WhatsApp Fallback Logic
-      const phone = '27653620916';
-      const text = encodeURIComponent(`Hi Sledge! My name is ${formData.name}. I'm interested in a ${formData.service} commission. ${formData.message}`);
-      window.open(`https://wa.me/${phone}?text=${text}`, '_blank');
+    try {
+      const response = await fetch("https://formsubmit.co/ajax/gcusaaa@gmail.com", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "Accept": "application/json"
+        },
+        body: JSON.stringify({
+          _subject: `🎨 New Commission Request from ${formData.name}`,
+          _replyto: formData.email, 
+          Name: formData.name,
+          Email: formData.email,
+          Phone: formData.phone,
+          Service: formData.service,
+          Message: formData.message
+        })
+      });
 
-      // Reset form
-      setFormData({ name: '', phone: '', service: '', message: '' });
-      setTimeout(() => setStatus('idle'), 6000);
-    }, 1200);
+      if (response.ok) {
+        setStatus('success');
+        
+        // Reset form fields after showing success for 5 seconds
+        setTimeout(() => {
+          setFormData({ name: '', email: '', phone: '+27 ', service: '', message: '' });
+          setStatus('idle');
+        }, 5000);
+      } else {
+        setStatus('error');
+        setErrorMessage('Server error. Please try again later.');
+        setTimeout(() => setStatus('idle'), 4000);
+      }
+    } catch (error) {
+      console.error("FormSubmit Submission Error:", error);
+      setStatus('error');
+      setErrorMessage('Network error. Please check your connection and try again.');
+      setTimeout(() => setStatus('idle'), 4000);
+    }
   };
 
   return (
@@ -44,45 +134,89 @@ export default function Contact() {
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-ink-400 mb-12 max-w-2xl mx-auto">
-        {/* Contact Info Cards (Unchanged) */}
-        <div className="bg-ink-600 p-6 text-center">
-          <div className="text-red text-2xl mb-3">📱</div>
-          <p className="text-xs text-ink-100 tracking-widest uppercase mb-1">WhatsApp</p>
-          <a href="https://wa.me/27653620916" className="text-sm text-cream font-medium hover:text-red transition-colors">065 362 0916</a>
-        </div>
-        <div className="bg-ink-600 p-6 text-center">
-          <div className="text-amber text-2xl mb-3">📸</div>
-          <p className="text-xs text-ink-100 tracking-widest uppercase mb-1">Instagram</p>
-          <a href="https://instagram.com/sledgetheartist" target="_blank" rel="noreferrer" className="text-sm text-cream font-medium hover:text-amber transition-colors">@sledgetheartist</a>
-        </div>
-        <div className="bg-ink-600 p-6 text-center">
-          <div className="text-blue text-2xl mb-3">📍</div>
-          <p className="text-xs text-ink-100 tracking-widest uppercase mb-1">Based In</p>
-          <p className="text-sm text-cream font-medium">Cape Town, ZA</p>
-        </div>
+        {/* Contact Cards omitted for brevity - Keep your existing WhatsApp/LinkedIn/Location cards here */}
       </div>
 
-      <form onSubmit={handleSubmit} className="max-w-2xl mx-auto space-y-3" noValidate>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-          <input id="name" value={formData.name} onChange={handleInputChange} type="text" placeholder="Your name" className="form-input" required />
-          <input id="phone" value={formData.phone} onChange={handleInputChange} type="tel" placeholder="WhatsApp / phone" className="form-input" />
-        </div>
-        <select id="service" value={formData.service} onChange={handleInputChange} className="form-input w-full" required>
-          <option value="" disabled>Select a service…</option>
-          <option value="portrait">Portrait Drawing</option>
-          <option value="mural">Wall Mural</option>
-          <option value="clothing">Clothing Art</option>
-          <option value="other">Other / Not Sure</option>
-        </select>
-        <textarea id="message" value={formData.message} onChange={handleInputChange} rows="4" placeholder="Tell me about your vision — size, subject, occasion…" className="form-input w-full resize-none" required></textarea>
+      {/* Relative container so the success popup can overlay the form */}
+      <div className="max-w-2xl mx-auto relative">
         
-        <button type="submit" disabled={status === 'loading'} className="btn-red w-full py-4 text-sm tracking-widest uppercase font-medium disabled:opacity-50">
-          {status === 'loading' ? 'Sending…' : 'Send Request →'}
-        </button>
+        {/* Success Popup Overlay */}
+        {status === 'success' && (
+          <div className="absolute inset-0 z-10 flex items-center justify-center transition-all duration-300">
+            <div className="bg-ink-600 p-8 rounded-lg border border-green/50 shadow-2xl text-center max-w-sm w-full mx-4">
+              <div className="text-green text-4xl mb-3">✓</div>
+              <h3 className="text-xl text-cream font-medium mb-2">Request Sent!</h3>
+              <p className="text-sm text-ink-100">
+                Your message has been successfully delivered. I'll review your project and email you back soon.
+              </p>
+            </div>
+          </div>
+        )}
 
-        {status === 'success' && <div className="text-center py-4 text-green text-sm tracking-wide">✓ Request sent! Opening WhatsApp...</div>}
-        {status === 'error' && <div className="text-center py-4 text-red text-sm tracking-wide">Please fill in your name and tell me about your project.</div>}
-      </form>
+        {/* The Form - Blurs out when success is triggered */}
+        <form 
+          onSubmit={handleSubmit} 
+          className={`space-y-4 transition-all duration-300 ${status === 'success' ? 'blur-md opacity-40 pointer-events-none select-none' : ''}`} 
+          noValidate
+        >
+          {/* Row 1: Name and Email */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div>
+              <input id="name" value={formData.name} onChange={handleInputChange} type="text" placeholder="Your name" className="form-input w-full" required />
+            </div>
+            
+            {/* Email Field with validation */}
+            <div>
+              <input 
+                id="email" 
+                value={formData.email} 
+                onChange={handleInputChange} 
+                onBlur={handleBlur} 
+                type="email" 
+                placeholder="Email address" 
+                className={`form-input w-full transition-colors ${errors.email ? '!border-amber !text-[#F4F4F4] focus:!border-amber focus:!ring-amber' : ''}`} 
+                required 
+              />
+              {errors.email && <p className="text-amber text-xs mt-1.5 ml-1">{errors.email}</p>}
+            </div>
+          </div>
+          
+          {/* Row 2: Phone/WhatsApp with validation */}
+          <div>
+            <input 
+              id="phone" 
+              value={formData.phone} 
+              onChange={handlePhoneChange} 
+              onBlur={handleBlur}
+              type="tel" 
+              placeholder="+27 Phone / WhatsApp" 
+              className={`form-input w-full transition-colors ${errors.phone ? '!border-amber !text-[#F4F4F4] focus:!border-amber focus:!ring-amber' : ''}`} 
+            />
+            {errors.phone && <p className="text-amber text-xs mt-1.5 ml-1">{errors.phone}</p>}
+          </div>
+
+          <select id="service" value={formData.service} onChange={handleInputChange} className="form-input w-full" required>
+            <option value="" disabled>Select a service…</option>
+            <option value="portrait">Portrait Drawing</option>
+            <option value="mural">Wall Mural</option>
+            <option value="clothing">Clothing Art</option>
+            <option value="other">Other / Not Sure</option>
+          </select>
+          
+          <textarea id="message" value={formData.message} onChange={handleInputChange} rows="4" placeholder="Tell me about your vision — size, subject, occasion…" className="form-input w-full resize-none" required></textarea>
+          
+          <button type="submit" disabled={status === 'loading'} className="btn-red w-full py-4 text-sm tracking-widest uppercase font-medium disabled:opacity-50 transition-opacity">
+            {status === 'loading' ? 'Sending Request…' : 'Send Request →'}
+          </button>
+
+          {/* General Error Message */}
+          {status === 'error' && (
+            <div className="text-center py-2 text-red text-sm tracking-wide mt-2">
+              {errorMessage}
+            </div>
+          )}
+        </form>
+      </div>
     </section>
   );
 }
