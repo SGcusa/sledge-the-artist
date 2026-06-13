@@ -3,21 +3,24 @@ import { useState, useEffect, useRef } from 'react';
 const galleryData = [
   { id: 1, category: 'Canvas Paintings', size: 'tall', img: '/images/potrait_1.jpg', title: 'Conceptual Artwork', dot: 'bg-blue' },
   { id: 2, category: 'Pencil Drawings', size: 'tall', img: '/images/frame_2.jpg', title: 'A2 Commission', dot: 'bg-red' },
-  { id: 3, category: 'Clothing Art', size: 'tall', vid: '/videos/video_4.mp4', title: 'Charcoal Study', dot: 'bg-blue' },
+  { id: 3, category: 'Clothing Art', size: 'tall', img: '/images/denim_3.jpg', title: 'Commission', dot: 'bg-red' },
   { id: 4, category: 'Canvas Paintings', size: 'tall', img: '/images/potrait_8.jpg', title: 'Commission', dot: 'bg-amber' },
   { id: 5, category: 'Clothing Art', size: 'tall', vid: '/videos/video_3.mp4', title: 'Charcoal Study', dot: 'bg-red' },
-  { id: 6, category: 'Clothing Art', size: 'tall', img: '/images/denim_1.jpg', title: 'Charcoal Study', dot: 'bg-red' },
+  { id: 6, category: 'Commercial Work', size: 'tall', img: '/images/commercial_2.jpg', title: 'Commercial Work', dot: 'bg-red' },
   { id: 7, category: 'Pencil Drawings', size: 'tall', img: '/images/potrait_4.jpg', title: 'Commercial Work', dot: 'bg-red' },
   { id: 8, category: 'Pencil Drawings', size: 'tall', img: '/images/frame_1.jpg', title: 'A4 Commission', dot: 'bg-amber' },
   { id: 9, category: 'Wall Murals', size: 'tall', vid: '/videos/video_2.mp4', title: 'First Mural', dot: 'bg-red' },
   { id: 10, category: 'Canvas Paintings', size: 'tall', img: '/images/potrait_2.jpg', title: 'Conceptual Artwork', dot: 'bg-blue' },
+  { id: 11, category: 'Commercial Work', size: 'tall', img: '/images/commercial_1.jpg', title: 'Commercial Work', dot: 'bg-blue' },
   { id: 12, category: 'Canvas Paintings', size: 'tall', img: '/images/potrait_3.jpg', title: 'Conceptual Artwork', dot: 'bg-blue' },
   { id: 13, category: 'Clothing Art', size: 'tall', img: '/images/denim_2.jpg', title: 'Commission', dot: 'bg-red' },
   { id: 14, category: 'Pencil Drawings', size: 'tall', img: '/images/potrait_5.jpg', title: 'Wall Murals Art', dot: 'bg-amber' },
-  { id: 15, category: 'Clothing Art', size: 'tall', img: '/images/denim_3.jpg', title: 'Commission', dot: 'bg-red' },
+  { id: 15, category: 'Clothing Art', size: 'tall', vid: '/videos/video_4.mp4', title: 'Charcoal Study', dot: 'bg-blue' },
   { id: 16, category: 'Canvas Paintings', size: 'tall', img: '/images/potrait_7.jpg', title: 'A2 Commission', dot: 'bg-amber' },
   { id: 17, category: 'Canvas Paintings', size: 'tall', img: '/images/potrait_6.jpg', title: 'A1 Commission', dot: 'bg-amber' },
   { id: 18, category: 'Commercial Work', size: 'tall', img: '/images/commercial_5.jpg', title: 'J&B Campaign', dot: 'bg-red' },
+  { id: 19, category: 'Commercial Work', size: 'tall', img: '/images/commercial_3.jpg', title: 'Commercial Work', dot: 'bg-red' },
+  { id: 20, category: 'Commercial Work', size: 'tall', img: '/images/commercial_4.jpg', title: 'Commercial Work', dot: 'bg-red' },
 ];
 
 export default function Gallery() {
