@@ -143,7 +143,7 @@ export default function Gallery() {
         <div 
           className={`absolute right-0 top-full z-30 transition-all duration-500 ease-in-out origin-top transform ${
             filter === 'Commercial Work' 
-              ? 'opacity-100 translate-y-0 scale-y-100 mt-2 md:mt-4' 
+              ? 'opacity-100 translate-y-0 scale-y-100' 
               : 'opacity-0 -translate-y-4 scale-y-0 pointer-events-none'
           }`}
         >
@@ -151,12 +151,24 @@ export default function Gallery() {
             href="https://mzukisimbutuma.odoo.com/" 
             target="_blank" 
             rel="noopener noreferrer"
-            style={{ writingMode: 'vertical-rl' }}
-            className="flex items-center justify-center bg-[#D4A843] hover:text-white text-ink-900 font-black uppercase text-[10px] tracking-widest py-2 px-4 shadow-2xl transition-colors duration-300 group select-none"
+            style={{ animation: 'textStrobe 2s ease-in-out infinite' }}
+            className="flex items-center justify-center bg-amber hover:text-black font-black uppercase text-[10px] md:text-[11.1px] tracking-widest py-3 px-4  shadow-2xl select-none no-underline"
           >
-            <span className="transform rotate-180 mb-2 transition-transform duration-300 group-hover:translate-y-1">←</span>
+            <span 
+              className="mr-2 inline-block rotate-180"
+              style={{ animation: 'horizontalNudge 1s ease-in-out infinite alternate' }}
+            >
+              ←
+            </span>
             <span>More Commercial Work</span>
           </a>
+
+          <style dangerouslySetInnerHTML={{__html: `
+            @keyframes horizontalNudge {
+              0% { transform: translateX(0); }
+              100% { transform: translateX(6px); }
+            }
+          `}} />
         </div>
       </div>
 
