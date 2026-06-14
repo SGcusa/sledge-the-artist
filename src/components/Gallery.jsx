@@ -169,7 +169,7 @@ export default function Gallery() {
               100% { transform: translateX(6px); }
             }
           `}} />
-        </div>
+        </div> 
       </div>
 
       <div id="gallery-grid" className="grid grid-cols-2 md:grid-cols-4 gap-1 auto-rows-fr">
