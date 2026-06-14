@@ -22,15 +22,15 @@ export default function Hero() {
 
       <div className="absolute left-0 top-0 bottom-0 w-1 bg-red"></div>
 
-      <div className="relative z-10 px-8 md:px-16 pb-16 w-full max-w-3xl">
-        <h1 className="font-display text-8xl md:text-[120px] leading-none text-cream fade-up" style={{ animationDelay: '0.2s' }}>
+      <div className="relative z-10 px-5 md:px-16 pb-16 w-full max-w-3xl">
+        <h1 className="font-display text-7xl md:text-[120px] leading-none text-cream fade-up" style={{ animationDelay: '0.2s' }}>
           SLEDGE<br /><span className="text-red">THE</span><br />ARTIST
         </h1>
         <p className="mt-5 text-sm text-ink-50 max-w-sm leading-relaxed font-light fade-up" style={{ animationDelay: '0.35s' }}>
           Custom portraits. Wall murals. Clothing art.<br />Every piece is a story told with paint, pencil, <br className="md:hidden"></br> and purpose.
         </p>
         <div className="flex gap-3 mt-8 flex-wrap fade-up" style={{ animationDelay: '0.45s' }}>
-          <a href="#contact" className="btn-red p-2.5 md:px-6 md:py-3 text-xs tracking-widest uppercase font-medium">Request Your Piece →</a>
+          <a href="#contact" className="btn-red p-2.5 md:px-6 md:py-3 text-xs tracking-widest uppercase font-medium">Request Your Piece</a>
           <a href="#work"    className="btn-outline p-2.5 md:px-6 md:py-3 text-xs tracking-widest uppercase font-medium">View My Work</a>
         </div>
       </div>

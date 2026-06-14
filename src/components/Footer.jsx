@@ -23,7 +23,7 @@ export default function Footer() {
           </a>
         </div>
       </div>
-      <div className="flex flex-wrap justify-between items-center gap-4 pt-6 border-t border-ink-400">
+      <div className="flex flex-wrap justify-center md:justify-between items-center gap-4 pt-6 border-t border-ink-400">
         <p className="text-xs text-ink-200 tracking-wide">© 2026 Sledge The Artist · Cape Town, South Africa</p>
         <div className="flex gap-6">
           <a href="#work"     className="text-xs text-ink-200 hover:text-cream tracking-widest uppercase transition-colors">Work</a>
