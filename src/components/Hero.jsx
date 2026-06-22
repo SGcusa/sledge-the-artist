@@ -26,8 +26,8 @@ export default function Hero() {
         <h1 className="font-display text-7xl md:text-[120px] leading-none text-cream fade-up" style={{ animationDelay: '0.2s' }}>
           SLEDGE<br /><span className="text-red">THE</span><br />ARTIST
         </h1>
-        <p className="mt-5 text-sm text-ink-50 max-w-sm leading-relaxed font-light fade-up" style={{ animationDelay: '0.35s' }}>
-          Custom portraits. Wall murals. Clothing art.<br />Every piece is a story told with paint, pencil, <br className="md:hidden"></br> and purpose.
+        <p className="mt-5 text-sm text-ink-50 max-w-lg leading-relaxed font-light fade-up" style={{ animationDelay: '0.35s' }}>
+          Bringing human and brand stories to life with paint, pencil, and purpose. <br /> Custom portraits. Digital campaigns. Wall murals. Brand design. And more.
         </p>
         <div className="flex gap-3 mt-8 flex-wrap fade-up" style={{ animationDelay: '0.45s' }}>
           <a href="#contact" className="btn-red p-2.5 md:px-6 md:py-3 text-xs tracking-widest uppercase font-medium">Request Your Piece</a>

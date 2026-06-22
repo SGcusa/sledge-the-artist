@@ -12,14 +12,18 @@ export default function About() {
         <h2 className="section-heading">About <br className="md:hidden"></br> Sledge The Artist</h2>
         <div className="section-divider mb-6"></div>
         
-        <p className="text-sm text-ink-50 leading-relaxed font-light mb-4 mt-2.5 md:mt-5">
-          I create art that captures people — their stories, their energy, their identity. From detailed portraits to bold murals to hand-painted clothing.
+        <p className="text-sm text-ink-50 leading-relaxed font-light mb-3 md:mb-6 mt-2.5 md:mt-5 text-balance">
+          I bring creative visions to life across two distinct worlds: commercial design and fine art.
         </p>
-        <p className="text-sm text-ink-50 leading-relaxed font-light md:mb-8">
-          Every commission is personal. I work closely with each client to make sure the final piece means something real.
+        <p className="text-sm text-ink-50 leading-relaxed font-light mb-3 md:mb-6 text-balance">
+          In the commercial space, I help brands find their visual voice through dynamic websites, striking logos, and engaging digital campaigns.
+          On the canvas, I capture human stories through detailed portraits, large-scale murals, and hand-painted clothing. 
+        </p>
+        <p className="text-sm text-ink-50 leading-relaxed font-light mb-3 md:mb-6 text-balance">
+          No matter the medium, my approach remains the same: every commission is personal, and I work closely with each client to create something that is authentic, bold, and real.
         </p>
         
-        <div className="mt-4 md:mt-0 pt-6 border-t border-ink-600/50">
+        {/* <div className="mt-4 md:mt-0 pt-6 border-t border-ink-600/50">
           
           <h3 className="text-white text-lg md:text-3xl font-medium mb-1 uppercase tracking-wide" style={{ fontFamily: '"Bebas Neue", sans-serif' }}>
             Collaborations
@@ -45,7 +49,7 @@ export default function About() {
               />
             </div>
           </div>
-        </div>
+        </div> */}
         
       </div>
     </section>

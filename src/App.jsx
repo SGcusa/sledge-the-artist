@@ -5,6 +5,7 @@ import Gallery from "./components/Gallery";
 import About from "./components/About";
 import Process from "./components/Process";
 import Contact from "./components/Contact";
+import Blogs from "./components/Blogs";
 import Footer from "./components/Footer";
 
 export default function App() {
@@ -12,8 +13,9 @@ export default function App() {
     <div className="bg-ink-800 text-cream font-body overflow-x-hidden">
       <Navbar />
       <Hero />
+      <Services />
       <Gallery />
-      <About />
+      <Contact />
       <Process />
       
       {/* Testimonial Strip */}
@@ -26,7 +28,8 @@ export default function App() {
         </p>
       </div>
       
-      <Contact />
+      <About />
+      <Blogs />
       <Footer />
     </div>
   );

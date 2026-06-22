@@ -50,7 +50,7 @@ export default function Navbar() {
         </a>
         
         <div className="hidden md:flex items-center gap-8">
-          {['work', 'about', 'process', 'contact'].map((item) => (
+          {['work', 'about', 'process', 'contact', 'blogs'].map((item) => (
             <a 
               key={item}
               href={`#${item}`} 
