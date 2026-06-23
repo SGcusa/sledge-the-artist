@@ -102,7 +102,7 @@ export default function Navbar() {
       {isMenuOpen && (
         <div id="mobile-menu" className="fixed inset-0 z-40 bg-ink-900 flex flex-col items-center justify-center gap-8 animate-[fadeIn_0.2s_ease]">
           <button onClick={() => setIsMenuOpen(false)} className="absolute top-5 right-6 text-cream text-3xl">&times;</button>
-          {['services', 'work', 'about', 'process', 'contact'].map((item) => (
+          {['collaborations', 'work', 'about', 'process', 'contact'].map((item) => (
             <a 
               key={item} 
               href={`#${item}`} 

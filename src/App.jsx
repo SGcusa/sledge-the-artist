@@ -1,19 +1,20 @@
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
-import Services from "./components/Services";
+import Collaborations from "./components/Collaborations";
 import Gallery from "./components/Gallery";
 import About from "./components/About";
 import Process from "./components/Process";
 import Contact from "./components/Contact";
 import Blogs from "./components/Blogs";
 import Footer from "./components/Footer";
+import WhatsAppButton from "./components/WhatsAppButton";
 
 export default function App() {
   return (
     <div className="bg-ink-800 text-cream font-body overflow-x-hidden">
       <Navbar />
       <Hero />
-      <Services />
+      <Collaborations />
       <Gallery />
       <Contact />
       <Process />
@@ -31,6 +32,8 @@ export default function App() {
       <About />
       <Blogs />
       <Footer />
+
+      <WhatsAppButton />
     </div>
   );
 }

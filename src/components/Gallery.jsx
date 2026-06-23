@@ -306,6 +306,8 @@ export default function Gallery() {
                     <span className={`inline-block w-2 h-2 rounded-full ${item.dot}`}></span>
                     <span className="text-xs text-cream tracking-widest uppercase ml-2">{item.title}</span>
                   </div>
+                </div>
+                <div className="absolute top-0 right-0 p-3 pointer-events-none">
                   {isExpanded && (
                     <span className="text-[9px] text-[#D4A843] bg-ink-900/80 px-2 py-1 uppercase tracking-widest font-bold">
                       Click to close
